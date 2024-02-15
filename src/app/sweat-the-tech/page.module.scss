@@ -1,0 +1,71 @@
+.sweatTheTech {
+    color: ivory;
+    display: grid;
+
+    // default position is absolute
+    // use relative to include the image in the flow of the page
+    &__imageWrapper {
+        display: grid;
+        filter: grayscale(0%);
+        height: 100vh;
+        place-content: center;
+        position: relative;
+        width: 100vw;
+    }
+
+    &__titleWrapper {
+        display: block;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        z-index: 9999;
+    }
+
+    &__title {
+        color: floralwhite;
+        font-size: 1.5rem;
+        font-weight: 900;
+        opacity: 1;
+        place-self: center;
+        position: relative;
+        text-align: center;
+        width: max-content;
+        z-index: 9999;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 5rem;
+
+        }
+    }
+
+    &__description {
+        bottom: 50px;
+        font-size: 1rem;
+        font-weight: 900;
+        margin: 0;
+        opacity: 1;
+        place-self: center;
+        position: absolute;
+        right: 50px;
+        text-align: justify;
+        width: 300px;
+        z-index: 9999;
+    }
+
+
+    &__content {
+        display: block;
+        margin-bottom: 48px;
+        margin-top: 48px;
+        position: relative;
+        text-align: center;
+        z-index: 9999;
+    }
+}

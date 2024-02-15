@@ -1,0 +1,107 @@
+/**
+ * Styles for Header component
+ * Follows BEM conventions for naming.
+ * .header - Block representing the top-level component
+ * .header__logo - Element representing the logo within the header
+ * .header__linksContainer - Element representing the container for the links within the header
+ */
+
+$mediumScreens: 720px;
+$largeScreens: 1024px;
+
+.header {
+    align-items: center;
+    color: ivory;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 24px 48px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 999;
+    width: 79vw;
+
+    &__logoContainer {
+        align-self: center;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+
+    &__logo {
+        color: ivory;
+        display: block;
+        font-size: 1.2rem;
+        height: max-content;
+        position: relative;
+        text-transform: capitalize;
+        width: max-content;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media(min-width: $largeScreens) {
+            font-size: 3.3em;
+        }
+    }
+
+    &__linksContainer {
+        align-items: center;
+        display: none;
+        padding-bottom: 10px;
+        padding-right: 0px;
+        text-transform: uppercase;
+
+        /* Target the first span that wraps a link */
+        &>span:first-of-type a {
+            margin-left: 0;
+        }
+
+        /* Target the last span that wraps a link */
+        &>span:last-of-type a {
+            margin-right: 0;
+        }
+
+        @media (min-width: $mediumScreens) {
+            display: flex;
+        }
+    }
+
+    &__mobileMenuContainer {
+        align-items: center;
+        display: flex;
+        margin: 40px 0;
+
+        @media (min-width: $mediumScreens) {
+            display: none;
+        }
+    }
+
+    &__linkContainer {
+        display: inline-block;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__link {
+        font-size: 1rem;
+        margin: 20px;
+        position: relative;
+        color: #fffaf0;
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:visited {
+            color: #fffaf0;
+        }
+    }
+}
